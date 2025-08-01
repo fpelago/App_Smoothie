@@ -13,7 +13,7 @@ st.write(
 #from snowflake.snowpark.functions import col   spostata in linea 4
 
 name_on_order = st.text_input('Name on smoothie:')
-st.write('The name on your smoothie è: ', name_on_order)
+st.write('The name on your smoothie is: ', name_on_order)
 
 cnx = st.connection("snowflake")
 session = cnx.session()   # get_active_session()
