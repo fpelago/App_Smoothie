@@ -28,7 +28,7 @@ ingredients_list = st.multiselect(
 #new section to dispaly smoothiefroot nutrition information
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.jason())
+st.text(smoothiefroot_response.json())
 
 if ingredients_list:
 #    st.write("Hai selezionato:", ingredients_list)
