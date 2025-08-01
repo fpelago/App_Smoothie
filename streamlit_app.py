@@ -3,11 +3,6 @@ import streamlit as st
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
-#new section to dispaly smoothiefroot nutrition information
-import requests
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
-
 # Write directly to the app
 st.title(f":balloon: My Order App :cup_with_straw: ")
 st.write(
@@ -29,6 +24,11 @@ ingredients_list = st.multiselect(
     my_dataframe,
     max_selections=5
 )
+
+#new section to dispaly smoothiefroot nutrition information
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
 
 if ingredients_list:
 #    st.write("Hai selezionato:", ingredients_list)
