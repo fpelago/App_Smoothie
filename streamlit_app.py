@@ -55,7 +55,7 @@ my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_ord
 #    st.write(my_insert_stmt)
 #    st.stop
     
-    time_to_insert = st.button('Invia l\'ordine')
+time_to_insert = st.button('Invia l\'ordine')
     
     if time_to_insert:            #ingredients_string:
         session.sql(my_insert_stmt).collect()
