@@ -28,7 +28,7 @@ pd_df = my_dataframe.to_pandas()
 #st.stop
 
 ingredients_list = st.multiselect(
-    "Scegli fino a 5 gusti",
+    "Choose nup to 5 ingredients",
     my_dataframe,
     max_selections=5
 )
@@ -37,7 +37,7 @@ if ingredients_list:
 #    st.write("Hai selezionato:", ingredients_list)
 #    st.text(ingredients_list)
 
-    ingredients_string = ' '
+    ingredients_string = ''
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
@@ -50,7 +50,7 @@ if ingredients_list:
         sf_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
     #    st.write(ingredients_string)
-    st.stop
+    #st.stop
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             values ('""" + ingredients_string + """','""" + name_on_order + """')"""
